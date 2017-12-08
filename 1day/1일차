@@ -1,0 +1,11 @@
+#브라우저 오픈과 관련된 gem을 불러온다
+require 'Launchy'
+#검색어 배열을 만든다.
+idol = ["likelion", "ramen", "egg"]
+#검색 url을 저장한다.
+url = 'https://search.naver.com/search.naver?query='
+url search.naver?뒤 삭제 후 query= 붙이면됨
+#반복한다.
+idol.each do |name|
+Launchy.open(url+name)
+end
