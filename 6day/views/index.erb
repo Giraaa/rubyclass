@@ -1,0 +1,8 @@
+안녕!!!!!!!!!!!!!!!!!
+<a href="/post">글 쓰러가기</a>
+<a href="/signup">가입하러가기</a>
+<% @posts.each do |post| %>
+  <%= post.title %> <br />
+  <%= post.content %><br />
+  <hr />
+<% end %>
