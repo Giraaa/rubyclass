@@ -5,7 +5,12 @@ require 'date'
 require 'nokogiri'
 require 'httparty'
 require 'uri'
-
+#비포를 활용해서 디버깅
+before do
+  p "*****************************"
+  p params
+  p "*****************************"
+end
 
 get '/' do
   'hello world!'
@@ -45,6 +50,8 @@ get '/lol' do
   erb :lol
 end
 get '/result' do
+  # views/result.erb @p를 찍어서 디버깅
+  @p = params.inspect
   @count = params[:count]
   erb :result
 end
