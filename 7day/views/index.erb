@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>블로그</title>
+  </head>
+  <body>
+    <h3>블로그에 온걸 환영해</h3>
+    <a href="/new">글 써줘</a>
+    <hr />
+    <% @posts.each do |p| %>
+    <a href="/posts/<%= p.id %>"><p> <%= p.title%></p></a>
+    <hr />
+    <%end%>
+  </body>
+</html>
