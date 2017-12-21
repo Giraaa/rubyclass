@@ -1,0 +1,27 @@
+<h2>게시글</h2>
+ID : <%= @user.id %><br />
+제목 :<%= @user.title %><br />
+내용 : <%= @user.content %>
+<div><i class="fas fa-info fa-fw" style="background:MistyRose"></i> Info</div>
+
+
+<hr />
+<h3>댓글 입력해 주세요</h3>
+<form action="/user/add_coment">
+  <input type="text" name="content" placeholder="댓글을 입력해주세요" />
+  <input type="hidden" name="id" value="<%= @user.id %>">
+  <input type="submit" />
+</form>
+
+<hr />
+<% @user.comments.each do |comment| %>
+  <div class="container">
+    <p><%= comment.content %>
+      <a href="/user/edit_commnet/<%=comment.id%>" class="btn btn-primary" style="padding:3px 3px">수정</a>
+      <a href="/user/edit_commnet/<%=comment.id%>" class="btn btn-primary" style="padding:3px 3px">삭제</a>
+    </p>
+  </div>
+<%end%>
+
+
+<a href="/">홈으로 가기</a>

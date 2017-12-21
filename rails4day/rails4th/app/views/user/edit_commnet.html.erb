@@ -1,0 +1,23 @@
+<h2>게시글</h2>
+ID : <%= @user.id %><br />
+제목 :<%= @user.title %><br />
+내용 : <%= @user.content %>
+
+
+<hr />
+<% @user.comments.each do |comment| %>
+<% if @comment.id == comment.id %>
+  <form action="/user/update_coment/comment.id">
+    <input type="text" name="content" value="commnet.content" />
+    <input type="submit" />
+  </form>
+
+  else
+    <p><%= comment.content %></p>
+
+<%end%>
+
+<%end%>
+
+
+<a href="/">홈으로 가기</a>
